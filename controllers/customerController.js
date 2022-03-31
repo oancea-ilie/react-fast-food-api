@@ -88,9 +88,6 @@ const update = asyncHandler(async(req,res)=>{
     if(user.name == '' && user.email == '' && user.password == '' && user.confirmedPassword == '' && user.billing_address  == '' && user.phone  == ''){
         throw new Error("Nu exista propietati pentru update!");
     }
-    if(typeof user.phone != 'number'){
-        throw new Error("Campul price nu este numar!");
-    }
     if(obj){
         if(user.name){
             obj.name = user.name;

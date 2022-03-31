@@ -6,6 +6,10 @@ import db from "./config/db.js"
 import productRoutes from "./routes/productRoutes.js"
 import customerRoutes from "./routes/customerRoutes.js"
 import categoryRoutes from "./routes/categoryRoutes.js"
+import orderRoutes from "./routes/orderRoutes.js"
+import orderDetailsRoutes from "./routes/orderDetailsRoutes.js"
+import productCategoryRoutes from "./routes/productCategoryRoutes.js"
+
 
 dotenv.config();
 
@@ -24,6 +28,9 @@ app.get('/api', (req, res) => {
 app.use('/api/products', productRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/orders-details', orderDetailsRoutes);
+app.use('/api/product-categories', productCategoryRoutes);
 
 
 db.sequelize.sync().then( ()=>{

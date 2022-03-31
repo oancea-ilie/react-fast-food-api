@@ -39,7 +39,7 @@ export default (sequelize)=>{
         },
 
         order_date:{
-            type: Sequelize.DATEONLY,
+            type: Sequelize.DATE(6),
             allowNull: false,
             validate: {
                 notNull:{
