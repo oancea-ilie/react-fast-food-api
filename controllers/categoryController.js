@@ -1,5 +1,7 @@
 import asyncHandler from "express-async-handler";
 import db from "../config/db.js";
+import auth from "basic-auth";
+import bcrypt from 'bcrypt';
 
 const getAll = asyncHandler(async(req,res)=>{
 
@@ -123,6 +125,6 @@ const purge = asyncHandler(async(req, res)=>{
         throw new Error("Nu s-au gasit Category in baza de date!");
     }
 
-})
+});
 
 export {getAll, getById ,create, update, distroy, purge}

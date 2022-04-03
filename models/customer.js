@@ -1,4 +1,5 @@
-import { Sequelize } from "sequelize";
+import { DataTypes, Sequelize } from "sequelize";
+import bcrypt from "bcrypt"
 
 export default (sequelize)=>{
 
@@ -54,6 +55,12 @@ export default (sequelize)=>{
         confirmedPassword:{
             type: Sequelize.STRING,
             allowNull: false,
+            set(val){
+                if(val == this.password){
+                    const hashPassword = bcrypt.hashSync(val,10);
+                    this.setDataValue('confirmedPassword', hashPassword);
+                }
+            },
             validate: {
                 notNull:{
                     msg: 'Password can not be null!'

@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import db from "../config/db.js";
+import bcrypt from 'bcrypt';
 
 const getAll = asyncHandler(async(req,res)=>{
 
@@ -66,7 +67,7 @@ const create = asyncHandler(async(req,res)=>{
         if(allObj){
             for(let p of allObj){
                 if(p.name == newObj.name){
-                    throw new Error("Acest Customer exista deja in baza de date!");
+                    throw new Error("Acest utlizator exista deja!");
                 }
             }
         }
@@ -145,4 +146,23 @@ const purge = asyncHandler(async(req, res)=>{
 
 })
 
-export {getAll, getById ,create, update, distroy, purge}
+const login = asyncHandler(async(req, res)=>{
+    let obj  = req.body;
+    let all = await db.models.Customer.findAll();
+
+    if(all.length == 0){
+        throw new Error("Nu exista customeri in baza de date!");
+    }
+    else{
+        for(let e of all){
+            
+            let authentificate = bcrypt.compareSync(obj.password, e.confirmedPassword);
+            if(authentificate && e.email == obj.email){
+                res.status(200).json("success");
+            }
+        }
+        throw new Error("Nume sau parola gresita!");
+    }
+});
+
+export {getAll, getById ,create, update, distroy, purge,login}
