@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/static/js/main.c27f49dd.js",
+    "static/media/hero-img.png": "/static/media/hero-img.9cc54c3771d1d232274d.png",
+    "static/media/salad-1.png": "/static/media/salad-1.266e7297cced5ade32c1.png",
+    "static/media/delivery-img-1.png": "/static/media/delivery-img-1.0b1c8a2451fe2b527dcd.png",
+    "static/media/delivery-img-2.png": "/static/media/delivery-img-2.238e38b1d197130addc1.png",
+    "static/media/about-chef-4.jpg": "/static/media/about-chef-4.a21308919f192dd98753.jpg",
+    "static/media/about-card-2.jpg": "/static/media/about-card-2.3f27c027b4589fb84bf0.jpg",
+    "static/media/product-pizz.jpg": "/static/media/product-pizz.a3c9923c731aa80b6a62.jpg",
+    "static/media/about-card-3.jpg": "/static/media/about-card-3.b1908f12045479d41ba0.jpg",
+    "static/media/about-chef-1.jpg": "/static/media/about-chef-1.a2d3481967d0b525aeb7.jpg",
+    "static/media/about-chef-2.jpg": "/static/media/about-chef-2.e6497bc9065a1f032cec.jpg",
+    "static/media/about-card-1.jpg": "/static/media/about-card-1.31b73279ece82aa05c2b.jpg",
+    "static/media/about-img-2.jpg": "/static/media/about-img-2.f94998d95700f4e8c736.jpg",
+    "static/media/product-burger.jpg": "/static/media/product-burger.c1c9a12b73f77321faae.jpg",
+    "static/media/about-img-1.jpg": "/static/media/about-img-1.30415a92310c940b71e4.jpg",
+    "static/media/about-chef-3.jpg": "/static/media/about-chef-3.e899d0518e45f9005cb3.jpg",
+    "static/media/logo-1024.png": "/static/media/logo-1024.07cc5bb5541b500ee5f8.png",
+    "static/media/logo-2.png": "/static/media/logo-2.99519eb5f7e046ed3bd0.png",
+    "static/media/product-cartofi.jpg": "/static/media/product-cartofi.ce9861d9bf15ba18af6b.jpg",
+    "index.html": "/index.html",
+    "main.c27f49dd.js.map": "/static/js/main.c27f49dd.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c27f49dd.js"
+  ]
+}

@@ -1,6 +1,37 @@
 import asyncHandler from "express-async-handler";
 import db from "../config/db.js";
 
+
+const joinAll = asyncHandler(async(req,res)=>{
+
+    let {id} = req.params;
+    let rez = await db.models.ProductCategory.findAll({
+        include:{
+            all:true
+        },
+        order:[['id','DESC']],
+        limit:5
+    });
+
+    if(rez){
+        if(id){
+            let filtrat = rez.filter(e=> e.fk_category_id.name == id);
+
+            if(filtrat.length != 0){
+
+                res.status(200).json(filtrat);
+            }else{
+                
+                throw new Error("Nu se poate face filtrare cu aced ID!");
+            }
+        }else{
+            throw new Error("Nu exista id pentru filtrare !");
+        }
+    }else{
+        throw new Error("Nu s-a putut face join-ul!");
+    }
+});
+
 const getAll = asyncHandler(async(req,res)=>{
 
     let all = await db.models.ProductCategory.findAll();
@@ -121,4 +152,4 @@ const purge = asyncHandler(async(req, res)=>{
 
 })
 
-export {getAll, getById ,create, update, distroy, purge}
+export {getAll, getById ,create, update, distroy, purge, joinAll}
