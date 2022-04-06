@@ -48,7 +48,7 @@ app.use('/api/product-categories', productCategoryRoutes);
 
 db.sequelize.sync().then( ()=>{
 
-    app.listen(3005, async()=>{
+    app.listen(process.env.PORT || 5000, async()=>{
         console.log("Express server is listening on port 3005!");
     });
 
