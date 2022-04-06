@@ -1,10 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.c27f49dd.js",
+    "main.js": "/static/js/main.61985748.js",
+    "static/media/about-separator.jpg": "/static/media/about-separator.83f8207b1426bc3ba3f4.jpg",
     "static/media/hero-img.png": "/static/media/hero-img.9cc54c3771d1d232274d.png",
     "static/media/salad-1.png": "/static/media/salad-1.266e7297cced5ade32c1.png",
+    "static/media/breaker-1.jpg": "/static/media/breaker-1.7bdb56814290fe347fcc.jpg",
+    "static/media/menu-4.jpg": "/static/media/menu-4.7fd149f3a747e519e5e6.jpg",
+    "static/media/menu-3.jpg": "/static/media/menu-3.ee12279b8d9b6efac6d7.jpg",
     "static/media/delivery-img-1.png": "/static/media/delivery-img-1.0b1c8a2451fe2b527dcd.png",
+    "static/media/menu-2.jpg": "/static/media/menu-2.8d8ff17f0ac72ed82b66.jpg",
+    "static/media/menu-1.jpg": "/static/media/menu-1.c71db037e0f8402a631d.jpg",
     "static/media/delivery-img-2.png": "/static/media/delivery-img-2.238e38b1d197130addc1.png",
+    "static/media/contact-bg.jpg": "/static/media/contact-bg.080622e3daf3f1304987.jpg",
+    "static/media/hot-combo-img-2.jpg": "/static/media/hot-combo-img-2.8b46b0f33811ba56eb8f.jpg",
+    "static/media/hot-combo-img-1.jpg": "/static/media/hot-combo-img-1.ea34a0aff16eac8e01a6.jpg",
+    "static/media/ofer-img-1.jpg": "/static/media/ofer-img-1.001458841e2043161340.jpg",
     "static/media/about-chef-4.jpg": "/static/media/about-chef-4.a21308919f192dd98753.jpg",
     "static/media/about-card-2.jpg": "/static/media/about-card-2.3f27c027b4589fb84bf0.jpg",
     "static/media/product-pizz.jpg": "/static/media/product-pizz.a3c9923c731aa80b6a62.jpg",
@@ -14,15 +24,18 @@
     "static/media/about-card-1.jpg": "/static/media/about-card-1.31b73279ece82aa05c2b.jpg",
     "static/media/about-img-2.jpg": "/static/media/about-img-2.f94998d95700f4e8c736.jpg",
     "static/media/product-burger.jpg": "/static/media/product-burger.c1c9a12b73f77321faae.jpg",
+    "static/media/bg-home.jpg": "/static/media/bg-home.463864c5993308bb7f35.jpg",
     "static/media/about-img-1.jpg": "/static/media/about-img-1.30415a92310c940b71e4.jpg",
     "static/media/about-chef-3.jpg": "/static/media/about-chef-3.e899d0518e45f9005cb3.jpg",
     "static/media/logo-1024.png": "/static/media/logo-1024.07cc5bb5541b500ee5f8.png",
+    "static/media/ofer-img-3.jpg": "/static/media/ofer-img-3.5ed7e4b5b3ec57d61f86.jpg",
     "static/media/logo-2.png": "/static/media/logo-2.99519eb5f7e046ed3bd0.png",
     "static/media/product-cartofi.jpg": "/static/media/product-cartofi.ce9861d9bf15ba18af6b.jpg",
+    "static/media/ofer-img-2.jpg": "/static/media/ofer-img-2.233a9524b5fcbe2ff452.jpg",
     "index.html": "/index.html",
-    "main.c27f49dd.js.map": "/static/js/main.c27f49dd.js.map"
+    "main.61985748.js.map": "/static/js/main.61985748.js.map"
   },
   "entrypoints": [
-    "static/js/main.c27f49dd.js"
+    "static/js/main.61985748.js"
   ]
 }
