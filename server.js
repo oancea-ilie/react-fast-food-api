@@ -26,13 +26,6 @@ app.get('/api', (req, res) => {
     });
 });
 
-const __dirname = path.resolve();
-
-app.use(express.static(path.join(__dirname, '/client/build')))
-app.get('*', (req, res) =>
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-)
-
 app.use('/api/products', productRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/categories', categoryRoutes);
@@ -40,6 +33,12 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/orders-details', orderDetailsRoutes);
 app.use('/api/product-categories', productCategoryRoutes);
 
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, '/client/build')))
+app.get('*', (req, res) =>
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+)
 
 db.sequelize.sync().then( ()=>{
 
