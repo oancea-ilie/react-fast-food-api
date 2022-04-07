@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.61985748.js",
+    "main.js": "/static/js/main.1831f182.js",
     "static/media/about-separator.jpg": "/static/media/about-separator.83f8207b1426bc3ba3f4.jpg",
     "static/media/hero-img.png": "/static/media/hero-img.9cc54c3771d1d232274d.png",
     "static/media/salad-1.png": "/static/media/salad-1.266e7297cced5ade32c1.png",
@@ -33,9 +33,9 @@
     "static/media/product-cartofi.jpg": "/static/media/product-cartofi.ce9861d9bf15ba18af6b.jpg",
     "static/media/ofer-img-2.jpg": "/static/media/ofer-img-2.233a9524b5fcbe2ff452.jpg",
     "index.html": "/index.html",
-    "main.61985748.js.map": "/static/js/main.61985748.js.map"
+    "main.1831f182.js.map": "/static/js/main.1831f182.js.map"
   },
   "entrypoints": [
-    "static/js/main.61985748.js"
+    "static/js/main.1831f182.js"
   ]
 }
