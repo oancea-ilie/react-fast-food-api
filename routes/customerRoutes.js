@@ -2,12 +2,12 @@ import express from 'express'
 import {errorHandler} from "../middleware/errorMiddleware.js"
 
 import { getAll , getById, create, update, distroy, purge, login} from '../controllers/customerController.js';
-import authentificate from '../middleware/authMiddleware.js';
+import protect from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
 router.route("/")
-.get(authentificate, getAll, errorHandler)
+.get(protect, getAll, errorHandler)
 .post(create, errorHandler);
 
 router.route("/login")

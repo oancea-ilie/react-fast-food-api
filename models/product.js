@@ -53,9 +53,14 @@ export default (sequelize) =>{
         },
 
         image:{
-            type: Sequelize.STRING,
-            allowNull: true,
-
+            type: Sequelize.BLOB("long"),
+            allowNull: false,
+            notNull:{
+                msg:'Image can not be null!'
+            },
+            notEmpty:{
+                msq:'Image can not be empty!'
+            },
         },
 
         stock:{

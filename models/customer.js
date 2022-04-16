@@ -29,6 +29,7 @@ export default (sequelize)=>{
         email:{
             type:Sequelize.STRING,
             allowNull:false,
+            unique: true,
             validate: {
                 notNull:{
                     msg: 'Email can not be null!'

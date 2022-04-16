@@ -8,6 +8,7 @@ import Order from "../models/order.js";
 import ProductCategory from "../models/productCategory.js";
 import Product from "../models/product.js";
 import dotenv from "dotenv";
+import ImageTest from "../models/imageTest.js"
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ const connectDB = () =>{
         db.models.Order = Order(sequelize);
         db.models.ProductCategory = ProductCategory(sequelize);
         db.models.Product = Product(sequelize);
+        db.models.ImageTest = ImageTest(sequelize);
         
         db.models.Customer.hasMany(db.models.Order,{
             onDelete: 'CASCADE',

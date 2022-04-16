@@ -1,6 +1,7 @@
 import asyncHandler from "express-async-handler";
 import db from "../config/db.js";
 import bcrypt from 'bcrypt';
+import generateToken from "../utils/utilities.js";
 
 const getAll = asyncHandler(async(req,res)=>{
 
@@ -72,9 +73,18 @@ const create = asyncHandler(async(req,res)=>{
             }
         }
 
-        await db.models.Customer.create(newObj);
-        res.status(204).end();
+        let user = await db.models.Customer.create(newObj);
+
+        if(user){
+
+            res.status(201).json({
+                id: user.id,
+                username: user.name,
+                token: generateToken(user.id)
+            });
+        }
     }
+
 
 
 });
@@ -148,20 +158,25 @@ const purge = asyncHandler(async(req, res)=>{
 
 const login = asyncHandler(async(req, res)=>{
     let obj  = req.body;
-    let all = await db.models.Customer.findAll();
+    
+    let user = await db.models.Customer.findOne({ where: { email: `${obj.email}`} });
 
-    if(all.length == 0){
-        throw new Error("Nu exista customeri in baza de date!");
-    }
-    else{
-        for(let e of all){
-            
-            let authentificate = bcrypt.compareSync(obj.password, e.confirmedPassword);
-            if(authentificate && e.email == obj.email){
-                res.status(200).json("success");
-            }
+    if(user){
+        let authentificate = bcrypt.compareSync(obj.password, user.confirmedPassword);
+        if(authentificate){
+            res.status(200).json({
+                id: user.id,
+                name: user.name,
+                email : user.email,
+                token : generateToken(user.id)
+            });
+        }else{
+            res.status(401);
+            throw new Error("Parola gresita!");
         }
-        throw new Error("Nume sau parola gresita!");
+    }else{
+        res.status(401);
+        throw new Error("Nu exista acest nume!");
     }
 });
 

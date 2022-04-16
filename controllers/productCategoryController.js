@@ -9,14 +9,12 @@ const joinAll = asyncHandler(async(req,res)=>{
         include:{
             all:true
         },
-        order:[['id','DESC']],
-        limit:5
     });
 
     if(rez){
         if(id){
             let filtrat = rez.filter(e=> e.fk_category_id.name == id);
-
+            console.log(filtrat);
             if(filtrat.length != 0){
 
                 res.status(200).json(filtrat);

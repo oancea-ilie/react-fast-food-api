@@ -1,49 +1,33 @@
-import auth from "basic-auth";
-import bcrypt from 'bcrypt';
+import expressAsyncHandler from "express-async-handler";
 import db from "../config/db.js";
+import jwt from "jsonwebtoken";
 
-const authentificate = async (req,res,next)=>{
+const protect = expressAsyncHandler(async(req,res,next)=>{
 
-    let message = "";
+    let token;
+    if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")){
 
-    const credentials = auth(req);
+        try{
+            token = req.headers.authorization.split(' ')[1];
 
-    if(credentials){
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        let all = await db.models.Customer.findAll();
-        let user;
-        if(all){
-            all.forEach(e=>{
-                if(e.dataValues.email == credentials.name){
-                    user = e;
-                }
-            })
+            req.user = await db.models.Customer.findByPk(decoded.id);
+
+            next();
+            
+        }catch(e){
+            console.log(e);
+            res.status(401);
+            throw new Error("Not authorized, token failed!");
         }
-
-        if(user){
-            const authentificate = bcrypt.compareSync(credentials.pass, user.confirmedPassword);
-
-            if(authentificate){
-                req.currentUser = user;
-            }else{
-                message = "Credentiale gresite! Acces Respins!";
-            }
-
-        }else{
-            message ="Nu s-a gasit customer cu acest Email! Acces Respins!";
-        }
-    }else{
-        message ="Nu exista credentiale! Acces Respins!";
     }
 
-
-    if(message){
-        console.warn(message);
-        res.status(401).json({error:{message}});
-    }else{
-        next();
+    if(!token){
+        res.status(401)
+        throw new Error("Not authorized, no token!");
     }
 
-}
+})
 
-export default authentificate;
+export default protect;
