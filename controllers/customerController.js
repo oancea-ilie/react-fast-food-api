@@ -39,7 +39,7 @@ const create = asyncHandler(async(req,res)=>{
 
     let allObj = await db.models.Customer.findAll();
 
-    if(newObj.name == null || newObj.email == null || newObj.password == null|| newObj.confirmedPassword == null || newObj.billing_address == null || newObj.phone == null){
+    if(newObj.name == null || newObj.email == null || newObj.password == null|| newObj.confirmedPassword == null || newObj.billing_address == null || newObj.phone == null || newObj.createdIn == null){
         throw new Error("Propietati invalide!");
     }
     if(!newObj.name){
@@ -62,6 +62,9 @@ const create = asyncHandler(async(req,res)=>{
     }
     else if(typeof newObj.phone != 'number'){
         throw new Error('Campul phone nu este numar!');
+    }
+    else if(!newObj.createdIn){
+        throw new Error('Campul createdIn este gol!');
     }
     else{
 
@@ -96,7 +99,7 @@ const update = asyncHandler(async(req,res)=>{
 
     let obj = await db.models.Customer.findByPk(id);
 
-    if(user.name == '' && user.email == '' && user.password == '' && user.confirmedPassword == '' && user.billing_address  == '' && user.phone  == ''){
+    if(user.name == '' && user.email == '' && user.password == '' && user.confirmedPassword == '' && user.billing_address  == '' && user.phone  == '' && user.createdIn == ''){
         throw new Error("Nu exista propietati pentru update!");
     }
     if(obj){
@@ -118,9 +121,12 @@ const update = asyncHandler(async(req,res)=>{
         if(user.phone){
             obj.phone = user.phone;
         }
+        if(user.createdIn){
+            obj.createdIn = user.createdIn;
+        }
 
-        await obj.save();
-        res.status(204).end();
+        let rez = await obj.save();
+        res.status(204).json(rez);
 
     }else{
         throw new Error(`Nu s-a gasit Customer cu acest ID pentru a putea face Update!`);

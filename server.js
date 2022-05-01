@@ -9,8 +9,6 @@ import categoryRoutes from "./routes/categoryRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
 import orderDetailsRoutes from "./routes/orderDetailsRoutes.js"
 import productCategoryRoutes from "./routes/productCategoryRoutes.js"
-import imageTestRoutes from "./routes/imageTestRoutes.js"
-
 import path from "path"
 
 dotenv.config();
@@ -33,7 +31,6 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/orders-details', orderDetailsRoutes);
 app.use('/api/product-categories', productCategoryRoutes);
-app.use('/api/images', imageTestRoutes);
 
 const __dirname = path.resolve();
 

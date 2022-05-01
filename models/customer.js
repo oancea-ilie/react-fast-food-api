@@ -96,12 +96,24 @@ export default (sequelize)=>{
                     msg:'Phone can not be empty!'
                 },
             },
+        },
+        createdIn:{
+            type:Sequelize.DATEONLY,
+            allowNull: false,
+            validate: {
+                notNull:{
+                    msg: 'createdIn can not be null!'
+                },
+                notEmpty:{
+                    msg:'createdIn can not be empty!'
+                },
+            },
         }
         
     },{
         sequelize,
         timestamps:false,
-        createdAt:false,
+        createdAt:true,
         updatedAt:false,
     });
 

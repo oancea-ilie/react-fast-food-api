@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.d1c1ed38.js",
+    "main.js": "/static/js/main.4739afb6.js",
     "static/media/about-separator.jpg": "/static/media/about-separator.415c8714645924525797.jpg",
     "static/media/breaker-1.jpg": "/static/media/breaker-1.a5d5cacc0ea25180edbe.jpg",
     "static/media/menu-4.jpg": "/static/media/menu-4.29c3a56a8acc4e8c51f3.jpg",
@@ -14,6 +14,7 @@
     "static/media/ofer-img-1.jpg": "/static/media/ofer-img-1.c05d5ea19df57f82f3ad.jpg",
     "static/media/delivery-img-1.png": "/static/media/delivery-img-1.d92770d2ee79d706b062.png",
     "static/media/delivery-img-2.png": "/static/media/delivery-img-2.88623fcdf9753d98a9f4.png",
+    "static/media/product-not-found.png": "/static/media/product-not-found.03d4ca2e7f630b5cf98a.png",
     "static/media/about-card-2.jpg": "/static/media/about-card-2.be28c18a6ad4eda50552.jpg",
     "static/media/about-chef-4.jpg": "/static/media/about-chef-4.a1635b203047620a9557.jpg",
     "static/media/about-chef-2.jpg": "/static/media/about-chef-2.9955171b399c0eb96a52.jpg",
@@ -27,9 +28,9 @@
     "static/media/ofer-img-3.jpg": "/static/media/ofer-img-3.82364b39c3f30efec857.jpg",
     "static/media/loading.svg": "/static/media/loading.ba8a217e823fde783a9e4fc90657c890.svg",
     "index.html": "/index.html",
-    "main.d1c1ed38.js.map": "/static/js/main.d1c1ed38.js.map"
+    "main.4739afb6.js.map": "/static/js/main.4739afb6.js.map"
   },
   "entrypoints": [
-    "static/js/main.d1c1ed38.js"
+    "static/js/main.4739afb6.js"
   ]
 }
