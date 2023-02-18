@@ -13,11 +13,11 @@ const connectDB = () => {
   try {
     let sequelize = new Sequelize(
       process.env.DATABASE,
-      'oanceailie',
+      process.env.DB_USER,
       process.env.PASSWORD,
       {
         host: process.env.HOST,
-        dialect: 'mysql',
+        dialect: process.env.DIALECT,
       }
     );
 
